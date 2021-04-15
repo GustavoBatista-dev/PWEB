@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Objeto 2</title>
+    <script>
+        alert("JS - Função Construtora Retângulo")
+
+        function Retangulo(x, y) {
+            this.base = x
+            this.altura = y
+            this.CalcArea = function () {
+                return (x * y)
+            }
+        }
+
+        var retangulo01 = new Retangulo(parseFloat(prompt('Digite a Base: ')),
+                                        parseFloat(prompt('Digite a Altura: ')));
+        alert(retangulo01.CalcArea())
+    </script>
+
+    <script>
+        alert("JS - Função Conta")
+
+        function Conta(nome_correntista, banco, num_conta, saldo){
+            this.setNome = function(value){
+                nome_correntista = value
+            }
+            this.getNome = function(){
+                return nome_correntista
+            }
+            this.setBanco = function(value){
+                banco = value
+            }
+            this.getBanco = function(){
+                return banco
+            }
+            this.setNum_Conta = function(value){
+                num_conta = value
+            }
+            this.getNum_Conta = function(){
+                return num_conta
+            }
+            this.setSaldo = function(value){
+                saldo = value
+            }
+            this.getSaldo = function(){
+                return saldo
+            }
+        }
+        
+        function Corrente(saldo_especial){
+            this.setSaldo_Especial = function(value){
+                saldo_especial = value
+            }
+            this.getSaldo_Especial = function(){
+                return saldo_especial
+            }
+
+        }
+    
+        function Poupanca(juros, data_vencimento){
+            this.setJuros = function(value){
+                juros = value
+            }
+            this.getJuros = function(){
+                return juros
+            }
+            this.setData_Vencimento = function(value){
+                data_venciamento = value
+            }
+            this.getData_Vencimento = function(){
+                return data_venciamento
+            }
+        }
+
+        Corrente.prototype = new Conta()
+        Poupanca.prototype = new Conta()
+        nCorrente = new Corrente()
+        nPoupanca = new Poupanca()
+
+        nCorrente.setNome('Gustavo Batista')
+        nCorrente.setBanco('Fatec bank')
+        nCorrente.setNum_Conta('0030481913019')
+        nCorrente.setSaldo(999999)
+        nCorrente.setSaldo_Especial(0)
+        
+        nPoupanca.setNome('Gustavo Batista')
+        nPoupanca.setBanco('Fatec bank')
+        nPoupanca.setNum_Conta('0030481913019')
+        nPoupanca.setSaldo(50)
+        nPoupanca.setJuros(4.5)
+        nPoupanca.setData_Vencimento("01/01/2023")
+
+        document.write("Conta Corrente:<br><br>Nome do Correntista: " + nCorrente.getNome() +
+                        "<br>Conta: " + nCorrente.getBanco() +
+                        "<br>Número da Conta: " + nCorrente.getNum_Conta() +
+                        "<br>Saldo: " + nCorrente.getSaldo() +
+                        "<br>Saldo Especial: " + nCorrente.getSaldo_Especial() +
+                        "<br><br><br>")
+
+        document.write("Conta Poupança:<br><br>Nome do Correntista: " + nPoupanca.getNome() +
+                        "<br>Conta: " + nPoupanca.getBanco() +
+                        "<br>Número da Conta: " + nPoupanca.getNum_Conta() +
+                        "<br>Saldo: " + nPoupanca.getSaldo() +
+                        "<br>Taxa de Juros: " + nPoupanca.getJuros() + "%" +
+                        "<br>Data de Vencimento: " + nPoupanca.getData_Vencimento())
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
