@@ -1,0 +1,24 @@
+
+
+body {
+    background-color:blanchedalmond;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    background-color:darkcyan;
+    color: cornsilk;
+    text-align: center;
+    padding: 20px;
+}
+
+section{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+img{
+    width: 400px;
+    height: 400px;
+}
